@@ -1,4 +1,4 @@
-import { expect, test } from '../../../tests/helper';
+import { expect, test } from '../helper';
 
 test.describe('RAD Template', () => {
     test('Navigation is visible', async ({ radPage }) => {

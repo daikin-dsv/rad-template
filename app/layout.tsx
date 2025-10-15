@@ -24,7 +24,7 @@ const layoutScript = (
 
 export const metadata: Metadata = {
     title: 'RAD Template',
-    description: 'A modern Daikin application build with RAD'
+    description: 'A modern Daikin application built with RAD'
 };
 
 export default function RootLayout({

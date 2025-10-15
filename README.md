@@ -21,7 +21,7 @@ By default the app is served at [http://localhost:3006](http://localhost:3006). 
 Authentication relies on NextAuth and a Keycloak provider. Before running the dev server, change `.env.example` to `.env.local` file in the project root (Next.js automatically reads it) with the required settings:
 
 ```bash
-AUTH_URL=http://localhost:3006
+RAD_URL=replace-with-homepage-url
 AUTH_SECRET=replace-with-a-generated-secret
 AUTH_KEYCLOAK_ID=rad-test2
 AUTH_KEYCLOAK_SECRET=ask-your-team-for-this
@@ -40,6 +40,14 @@ Set `BYPASS_AUTH=true` if you want to skip the Keycloak login flow locally; the 
 - `npm run build` — runs the Vite bundle step first (`prebuild`) and then the full Next.js production build
 
 Run the web components watcher in a separate terminal whenever you edit files under `app/webcomponents.ts`.
+
+## Testing
+
+The project ships two complementary suites: quick Vitest-based component tests and Playwright end-to-end coverage.
+
+- `npm run test:component` runs unit and component tests in watch mode with Vitest. Use `npm run test:component:coverage` for an instrumented run or `npm run test:component:ui` to inspect results in the Vitest UI.
+- `ENV="local" npm run test:e2e` executes the Playwright suite headlessly. Make sure the Next.js dev server is running (`npm run dev`) and that your `.env.local` matches the target environment before starting the run.
+- `ENV="local" npm run test:e2e:dev` launches the Playwright trace viewer so you can re-run scenarios interactively while debugging failures.
 
 ## Locale System (`app/locale`)
 

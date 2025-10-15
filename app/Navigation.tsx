@@ -19,10 +19,10 @@ export default function Navigation({ session, links, userText }: NavigationProps
         return null;
     }
 
-    const { AUTH_URL, AUTH_KEYCLOAK_ID, AUTH_KEYCLOAK_ISSUER } = process.env;
+    const { RAD_URL, AUTH_KEYCLOAK_ID, AUTH_KEYCLOAK_ISSUER } = process.env;
     const userManagementLink =
-        AUTH_KEYCLOAK_ISSUER && AUTH_KEYCLOAK_ID && AUTH_URL
-            ? `${AUTH_KEYCLOAK_ISSUER}/account?referrer=${AUTH_KEYCLOAK_ID}&referrer_uri=${AUTH_URL}`
+        AUTH_KEYCLOAK_ISSUER && AUTH_KEYCLOAK_ID && RAD_URL
+            ? `${AUTH_KEYCLOAK_ISSUER}/account?referrer=${AUTH_KEYCLOAK_ID}&referrer_uri=${RAD_URL}`
             : '';
 
     return (

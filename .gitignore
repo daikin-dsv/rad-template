@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/playwright-report
+/test-results
 
 # next.js
 /.next/
@@ -43,3 +45,4 @@ next-env.d.ts
 
 /public/webcomponents.js
 /public/webcomponents.js.map
+.env

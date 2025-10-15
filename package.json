@@ -13,6 +13,8 @@
         "test:component": "vitest",
         "test:component:ui": "vitest --ui",
         "test:component:coverage": "vitest run --coverage",
+        "test:e2e": "npx playwright test",
+        "test:e2e:dev": "npx playwright test --ui",
         "lint": "eslint",
         "format": "prettier --write ."
     },
@@ -29,6 +31,7 @@
     "devDependencies": {
         "@daikin-oss/tailwind": "^0.3.0",
         "@eslint/eslintrc": "^3",
+        "@playwright/test": "^1.56.0",
         "@tailwindcss/postcss": "^4",
         "@testing-library/dom": "^10.4.1",
         "@testing-library/jest-dom": "^6.9.1",
@@ -38,6 +41,7 @@
         "@types/react": "^19",
         "@types/react-dom": "^19",
         "@vitejs/plugin-react": "^5.0.4",
+        "dotenv": "^17.2.3",
         "eslint": "^9",
         "eslint-config-next": "15.6.0-canary.39",
         "eslint-config-prettier": "^10.1.8",
