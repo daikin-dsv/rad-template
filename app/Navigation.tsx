@@ -26,13 +26,15 @@ export default function Navigation({ session, links, userText }: NavigationProps
             : '';
 
     return (
-        <app-header>
-            <NavigationMenu
-                user={session.user}
-                userManagementLink={userManagementLink}
-                links={links}
-                userText={userText}
-            />
-        </app-header>
+        <header className="border-b border-slate-200 bg-white text-slate-900 shadow-sm dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100">
+            <div className="mx-auto flex w-full max-w-screen-2xl items-center px-4 py-3 sm:px-6 lg:px-8">
+                <NavigationMenu
+                    user={session.user}
+                    userManagementLink={userManagementLink}
+                    links={links}
+                    userText={userText}
+                />
+            </div>
+        </header>
     );
 }
