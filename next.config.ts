@@ -2,9 +2,9 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
     experimental: {
-        // This makes it so that caching data fetching operations is opt-in
+        // Enable this once it becomes available in latest version of next
         // Only available in canary as of now
-        cacheComponents: true
+        // cacheComponents: true
     }
 };
 
