@@ -14,13 +14,27 @@ export interface ActiveLinkProps extends LinkProps {
 const ActiveLink = ({
     href,
     children,
+    className,
+    activeClassName,
     ...props
-}: ActiveLinkProps & HTMLAttributes<HTMLAnchorElement>) => {
+}: ActiveLinkProps &
+    HTMLAttributes<HTMLAnchorElement> & {
+        activeClassName?: string;
+    }) => {
     const pathname = usePathname();
     const isActive = pathname === href;
 
+    const classes = [className, isActive ? activeClassName : null]
+        .filter(Boolean)
+        .join(' ');
+
     return (
-        <Link href={href} {...(isActive ? { active: '' } : {})} {...props}>
+        <Link
+            href={href}
+            className={classes || undefined}
+            {...(isActive ? { active: '' } : {})}
+            {...props}
+        >
             {children}
         </Link>
     );

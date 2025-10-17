@@ -26,13 +26,13 @@ export default function Navigation({ session, links, userText }: NavigationProps
             : '';
 
     return (
-        <app-header>
+        <aside className="relative flex h-full w-72 flex-shrink-0 bg-slate-950 text-white shadow-xl">
             <NavigationMenu
                 user={session.user}
                 userManagementLink={userManagementLink}
                 links={links}
                 userText={userText}
             />
-        </app-header>
+        </aside>
     );
 }

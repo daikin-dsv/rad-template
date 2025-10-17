@@ -72,17 +72,21 @@ async function AuthenticatedApp({
 
     return (
         <SessionProvider session={session}>
-            <div className="flex h-screen flex-col">
+            <div className="flex min-h-screen bg-slate-100">
                 <Navigation
                     session={session}
                     links={navigationLinks}
                     userText={texts.user}
                 />
-                <main className="flex flex-grow flex-col overflow-x-scroll p-4">
-                    <BreadcrumbNav config={breadcrumbConfig} />
-                    {children}
-                </main>
-                <app-footer copyright={texts.footer.copyright}></app-footer>
+                <div className="flex min-h-screen flex-1 flex-col overflow-hidden">
+                    <main className="flex flex-1 flex-col gap-6 overflow-x-auto overflow-y-auto bg-white p-8 shadow-[0_-1px_0_0_rgba(15,23,42,0.08)_inset]">
+                        <BreadcrumbNav config={breadcrumbConfig} />
+                        {children}
+                    </main>
+                    <div className="border-t border-slate-200 bg-white px-8 py-4 text-sm text-slate-500">
+                        <app-footer copyright={texts.footer.copyright}></app-footer>
+                    </div>
+                </div>
             </div>
         </SessionProvider>
     );
