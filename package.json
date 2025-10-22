@@ -28,7 +28,7 @@
         "react-dom": "19.1.0"
     },
     "devDependencies": {
-        "@daikin-oss/tailwind": "^0.3.0",
+        "@daikin-oss/tailwind": "^0.4.0",
         "@eslint/eslintrc": "^3",
         "@playwright/test": "^1.56.0",
         "@tailwindcss/postcss": "^4",
