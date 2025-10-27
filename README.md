@@ -2,6 +2,10 @@
 
 This project couples a Next.js App Router application with a Vite bundle that ships Daikin design system web components and custom components. The README outlines the developer workflow and the conventions that support localization and web component loading.
 
+## Prerequisites
+
+- Node.js 22 or newer
+
 ## Getting Started
 
 Install dependencies, set environment, and run the Next.js dev server:
