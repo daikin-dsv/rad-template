@@ -86,6 +86,10 @@ Vite is configured in library mode to treat `app/webcomponents.ts` as the entry 
 
 Any dependency you import into `app/webcomponents.ts` becomes part of this bundle. After updating imports, rerun `npm run bundle:webcomponents` (or keep `npm run dev:webcomponents` running) so the latest code is available to the Next.js app.
 
+## Deploy Preview
+
+Deploy previews can be configured in the Netlify UI: [Configure Deploy Previews](https://docs.netlify.com/deploy/deploy-types/deploy-previews/#configure-deploy-previews)
+
 ## Learn More
 
 - [Next.js Documentation](https://nextjs.org/docs)
