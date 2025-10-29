@@ -1,0 +1,43 @@
+name: E2E Tests
+
+on:
+    workflow_dispatch:
+        inputs:
+            rad_url:
+                description: 'RAD base URL used by Playwright tests'
+                required: true
+                default: 'https://rad-template.netlify.app'
+                type: string
+            bypass_auth:
+                description: "Set to 'true' to skip login flow"
+                required: true
+                default: 'true'
+                type: choice
+                options:
+                    - 'false'
+                    - 'true'
+
+jobs:
+    e2e:
+        runs-on: ubuntu-latest
+        env:
+            RAD_URL: ${{ inputs.rad_url }}
+            BYPASS_AUTH: ${{ inputs.bypass_auth }}
+            AUTHINFO: ${{ secrets.AUTHINFO }}
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 'node'
+                  check-latest: true
+                  cache: npm
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Install Playwright browsers
+              run: npx playwright install --with-deps
+
+            - name: Run Playwright E2E tests
+              run: npm run test:e2e
