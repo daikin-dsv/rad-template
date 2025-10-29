@@ -16,7 +16,8 @@
         "test:e2e": "npx playwright test",
         "test:e2e:dev": "npx playwright test --ui",
         "lint": "eslint",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "docker:build": "docker build -t rad-template ."
     },
     "dependencies": {
         "@daikin-oss/dds-tokens": "^0.4.2",

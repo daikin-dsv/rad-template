@@ -45,6 +45,25 @@ Set `BYPASS_AUTH=true` if you want to skip the Keycloak login flow locally; the 
 
 Run the web components watcher in a separate terminal whenever you edit files under `app/webcomponents.ts`.
 
+## Docker
+
+Build the production image and run it with the required environment variables supplied at runtime:
+
+```bash
+npm run docker:build
+docker run -p 3006:3006 \
+    -e RAD_URL=http://localhost:3006 \
+    -e AUTH_SECRET=replace-with-secret \
+    -e AUTH_KEYCLOAK_ID=rad-test2 \
+    -e AUTH_KEYCLOAK_SECRET=ask-your-team-for-this \
+    -e AUTH_KEYCLOAK_ISSUER=https://sso-dev.daikinlab.com/auth/realms/daikin \
+    -e BYPASS_AUTH=false \
+    -e AUTH_TRUST_HOST=true \
+    rad-template
+```
+
+The container listens on port `3006` (as defined by `npm run start`). Adjust the exposed port and environment variable values to match your deployment target.
+
 ## Testing
 
 The project ships two complementary suites: quick Vitest-based component tests and Playwright end-to-end coverage.
