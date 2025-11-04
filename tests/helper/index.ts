@@ -106,13 +106,11 @@ const test = baseTest.extend<{
         { page, user, cookies, context }: LoginContext,
         applyPage: ApplyPageFn
     ): Promise<void> => {
-        console.log('RAD_URL', RAD_URL);
         if (!RAD_URL) {
             throw new Error('RAD_URL environment variable is not defined');
         }
         try {
             if (BYPASS_AUTH && BYPASS_AUTH === 'true') {
-                console.log('BYPASS_AUTH', BYPASS_AUTH);
                 await page.goto(RAD_URL);
                 await applyPage(page);
                 if (cookies) {
