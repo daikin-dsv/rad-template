@@ -9,8 +9,7 @@ This project couples a Next.js App Router application with a Vite bundle that sh
 
 ## Developer Sandbox: Running RAD-Template in GitHub Codespaces
 
-See full guide on Developer Sandbox: Running RAD-Template in GitHub Codespaces.
-[http://localhost:3006](/docs/developer-sandbox-running-rad-template-in-github codespaces.md)
+See full guide on [Developer Sandbox: Running RAD-Template in GitHub Codespaces](/docs/developer-sandbox-running-rad-template-in-github-codespaces.md).
 
 ## Prerequisites
 
