@@ -28,7 +28,6 @@ Before starting the app, you'll need to add a .env.local file. Use the following
 
 ### Start the Application
 
-1. https://github.com/daikin-dsv/rad-template/blob/main/.env.example
 1. Open the integrated terminal: ``` Ctrl+` ```
 1. Run 
    ```bash
