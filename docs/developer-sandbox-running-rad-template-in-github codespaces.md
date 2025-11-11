@@ -25,10 +25,10 @@ Note: Multiple developers can spin up their own Codespace simultaneously without
 
 1. Open the integrated terminal: ``` Ctrl+` ```
 1. Run 
-`
+   ```bash
     npm install
     npm run dev
-`
+    ```
 1. When the app starts, GitHub will detect a port and show a prompt "Your application is running on port 3006. Would you like to open it in the browser?"
 1. Click "Open in Browser."
 
