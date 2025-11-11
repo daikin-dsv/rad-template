@@ -43,10 +43,3 @@ This opens a live preview of the app at a Codespaces generated *.app.github.dev 
 ### Codespaces Best Practices
 
 1. Stop Codespaces when not in use to conserve compute hours. You can find all your codespaces here: https://github.com/codespaces
-
-### Future Integration: Keycloak
-
-We plan to add authentication testing via Keycloak directly inside Codespaces.
-This section will describe how to:
-* Set up environment variables for Keycloak client credentials.
-* Test login and protected routes from within the Codespace environment.
