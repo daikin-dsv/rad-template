@@ -21,8 +21,14 @@ Before you begin, ensure the following:
 1. GitHub will provision a new containerized development environment with all dependencies preinstalled.
 Note: Multiple developers can spin up their own Codespace simultaneously without conflicts.
 
+## Create Environment Variables File
+
+Before starting the app, you'll need to add a .env.local file. Use the following template as a reference: [Daikin RAD Template – .env.example](https://github.com/daikin-dsv/rad-template/blob/main/.env.example) (See [README](/README.md#configure-envlocal) for more information.)
+
+
 ### Start the Application
 
+1. https://github.com/daikin-dsv/rad-template/blob/main/.env.example
 1. Open the integrated terminal: ``` Ctrl+` ```
 1. Run 
    ```bash
