@@ -344,7 +344,6 @@ export default function ComponentGalleryClient({ copy }: ComponentGalleryClientP
                     >
                         <DaikinCard outline>
                             <DaikinCardHeader>
-                                <DaikinIcon slot="left-icon" icon="calendar" size="s" />
                                 {cardLayout.headerTitle}
                                 <span slot="description">
                                     {cardLayout.headerDescription}
@@ -459,14 +458,20 @@ export default function ComponentGalleryClient({ copy }: ComponentGalleryClientP
                     <ComponentCard name={buttons.name} description={buttons.description}>
                         <div className="flex flex-wrap gap-3">
                             <DaikinButton size="medium" variant="fill">
-                                <DaikinIcon slot="left-icon" icon="calendar" size="s" />
+                                <DaikinIcon
+                                    slot="left-icon"
+                                    icon="alarm"
+                                    size="l"
+                                    color="white"
+                                />
                                 {buttons.primary}
                             </DaikinButton>
                             <DaikinButton size="medium" variant="outline" color="default">
                                 <DaikinIcon
                                     slot="right-icon"
                                     icon="chevron-right"
-                                    size="s"
+                                    size="l"
+                                    color="current"
                                 />
                                 {buttons.secondary}
                             </DaikinButton>

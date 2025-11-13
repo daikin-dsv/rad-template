@@ -16,7 +16,7 @@ This project couples a Next.js App Router application with a Vite bundle that sh
 Install dependencies, set environment, and run the Next.js dev server:
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 cp .env.example .env.local
 npx auth secret
 
