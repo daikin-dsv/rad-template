@@ -99,6 +99,20 @@ All custom elements are imported once from this file to avoid a flash of unstyle
 
 `app/layout.tsx` synchronously requires the generated bundle by inserting `<script src="/webcomponents.js">` into the document head.
 
+### React wrappers (`app/components/dds-wrappers.tsx`)
+
+When React needs to render one of the custom elements, it uses the wrappers built with `@lit/react`. These wrappers:
+
+- Resolve each constructor from `customElements.get('daikin-*')` so the existing `webcomponents.js` bundle supplies the runtime implementation (no duplicate imports in the client bundle).
+- Import the Daikin classes as **type-only** dependencies, which keeps full TypeScript IntelliSense for attributes/events while emitting zero extra JavaScript.
+- Expose documented custom events (e.g., `onToggle`, `onClose`) via the `events` map passed to `createComponent`.
+
+If you add a new Daikin element:
+
+1. Import its type in `dds-wrappers.tsx`.
+2. Create a new wrapper with `createComponent`, using `resolveElementClass<typeof MyElement>('daikin-my-element')`.
+3. Update `app/webcomponents.ts` so the underlying web component is still registered before React hydrates.
+
 ### `vite.config.ts`
 
 Vite is configured in library mode to treat `app/webcomponents.ts` as the entry point and emit `public/webcomponents.js` with a UMD wrapper. Key details:

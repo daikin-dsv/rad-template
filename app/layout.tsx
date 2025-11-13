@@ -7,7 +7,7 @@ import { redirect } from 'next/navigation';
 
 import BreadcrumbNav from './BreadcrumbNav';
 import Navigation from './Navigation';
-import { DaikinLoadingReact } from './components/dds-wrappers';
+import { DaikinLoading } from './components/dds-wrappers';
 import './globals.css';
 import { loadTexts } from './locale';
 import type { TextBundle } from './locale';
@@ -42,7 +42,7 @@ export default function RootLayout({
                 <Suspense
                     fallback={
                         <div className="flex h-screen items-center justify-center">
-                            <DaikinLoadingReact />
+                            <DaikinLoading />
                         </div>
                     }
                 >
@@ -96,7 +96,7 @@ type NavigationLink = {
 function getNavigationLinks(texts: TextBundle): NavigationLink[] {
     return [
         { href: '/', label: texts.appRoutes.home },
-        { href: '/page2', label: texts.appRoutes.page2 }
+        { href: '/component-gallery', label: texts.appRoutes.componentGallery }
     ];
 }
 
@@ -106,13 +106,13 @@ type BreadcrumbConfig = Record<string, BreadcrumbItem[]>;
 
 function getBreadcrumbConfig(texts: TextBundle): BreadcrumbConfig {
     const home: BreadcrumbItem = { href: '/', label: texts.appRoutes.home };
-    const page2: BreadcrumbItem = {
-        href: '/page2',
-        label: texts.appRoutes.page2
+    const componentGallery: BreadcrumbItem = {
+        href: '/component-gallery',
+        label: texts.appRoutes.componentGallery
     };
 
     return {
         '/': [home],
-        '/page2': [home, page2]
+        '/component-gallery': [home, componentGallery]
     };
 }

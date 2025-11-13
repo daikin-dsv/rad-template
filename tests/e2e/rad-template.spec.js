@@ -4,22 +4,22 @@ test.describe('RAD Template', () => {
     test('Navigation is visible', async ({ radPage }) => {
         await expect(radPage.locator('[active]')).toContainText('Home');
 
-        const page2Link = radPage.locator('a[href="/page2"]');
+        const componentsGalleryLink = radPage.locator('a[href="/component-gallery"]');
         await expect(
-            page2Link,
-            'Page 2 link should be visible in the navigation'
+            componentsGalleryLink,
+            'Component Gallery link should be visible in the navigation'
         ).toBeVisible();
 
-        await page2Link.click();
+        await componentsGalleryLink.click();
 
         await expect(
             radPage,
-            'Clicking the Page 2 link should navigate to /page2'
-        ).toHaveURL(/\/page2(?:[?#]|$)/);
+            'Clicking the Component Gallery link should navigate to /component-gallery'
+        ).toHaveURL(/\/component-gallery(?:[?#]|$)/);
 
         await expect(
             radPage.locator('[active]'),
-            'Active navigation item should switch to Page 2'
-        ).toContainText('Page 2');
+            'Active navigation item should switch to Component Gallery'
+        ).toContainText('Component Gallery');
     });
 });

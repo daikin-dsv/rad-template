@@ -4,10 +4,7 @@ import { useMemo } from 'react';
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import {
-    DaikinBreadcrumbReact,
-    DaikinBreadcrumbItemReact
-} from './components/dds-wrappers';
+import { DaikinBreadcrumb, DaikinBreadcrumbItem } from './components/dds-wrappers';
 
 type BreadcrumbItem = {
     href: string;
@@ -53,12 +50,12 @@ export default function BreadcrumbNav({ config }: BreadcrumbNavProps) {
 
     return (
         <div className="mb-2">
-            <DaikinBreadcrumbReact>
+            <DaikinBreadcrumb>
                 {items.map(({ href, label }, index) => {
                     const isLast = index === items.length - 1;
 
                     return (
-                        <DaikinBreadcrumbItemReact
+                        <DaikinBreadcrumbItem
                             key={href}
                             href={href}
                             variant={isLast ? 'current' : 'normal'}
@@ -73,10 +70,10 @@ export default function BreadcrumbNav({ config }: BreadcrumbNavProps) {
                             }}
                         >
                             {label}
-                        </DaikinBreadcrumbItemReact>
+                        </DaikinBreadcrumbItem>
                     );
                 })}
-            </DaikinBreadcrumbReact>
+            </DaikinBreadcrumb>
         </div>
     );
 }

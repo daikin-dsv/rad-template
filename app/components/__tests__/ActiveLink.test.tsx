@@ -10,28 +10,28 @@ describe('ActiveLink Component', () => {
     });
 
     it('marks the link as active when the current pathname matches the href', () => {
-        render(<ActiveLink href="/page2">Page 2</ActiveLink>);
+        render(<ActiveLink href="/component-gallery">Component Gallery</ActiveLink>);
 
-        const link = screen.getByRole('link', { name: 'Page 2' });
-        expect(link.getAttribute('href')).toBe('/page2');
+        const link = screen.getByRole('link', { name: 'Component Gallery' });
+        expect(link.getAttribute('href')).toBe('/component-gallery');
     });
 
     it('does not add the active attribute when the pathname differs', () => {
-        render(<ActiveLink href="/page2">Page 2</ActiveLink>);
+        render(<ActiveLink href="/component-gallery">Component Gallery</ActiveLink>);
 
-        const link = screen.getByRole('link', { name: 'Page 2' });
+        const link = screen.getByRole('link', { name: 'Component Gallery' });
         expect(link).not.toHaveAttribute('active');
-        expect(link).toHaveAttribute('href', '/page2');
+        expect(link).toHaveAttribute('href', '/component-gallery');
     });
 
     it('forwards additional anchor props', () => {
         render(
-            <ActiveLink href="/page2" className="nav-link">
-                Page 2
+            <ActiveLink href="/component-gallery" className="nav-link">
+                Component Gallery
             </ActiveLink>
         );
 
-        const link = screen.getByRole('link', { name: 'Page 2' });
+        const link = screen.getByRole('link', { name: 'Component Gallery' });
         expect(link).toHaveClass('nav-link');
     });
 });
