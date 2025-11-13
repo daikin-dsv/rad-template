@@ -7,6 +7,10 @@ This project couples a Next.js App Router application with a Vite bundle that sh
 1. Click **Use this template** in GitHub (top right of the repository page) to create your own copy.
 2. Clone the newly created repository to your machine, then follow the steps below.
 
+## Developer Sandbox: Running RAD-Template in GitHub Codespaces
+
+See full guide on [Developer Sandbox: Running RAD-Template in GitHub Codespaces](/docs/developer-sandbox-running-rad-template-in-github-codespaces.md).
+
 ## Prerequisites
 
 - Node.js 22 or newer
